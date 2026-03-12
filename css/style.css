@@ -1,0 +1,353 @@
+/* Academic Personal Website Styles */
+:root {
+  --primary-color: #2c3e50;
+  --accent-color: #3498db;
+  --text-color: #333;
+  --light-bg: #f8f9fa;
+  --border-color: #dee2e6;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  font-family: "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  line-height: 1.6;
+  color: var(--text-color);
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #ffffff;
+}
+
+.header {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 40px;
+  margin-bottom: 40px;
+  padding: 30px;
+  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.profile-img {
+  width: 250px;
+  height: 250px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 5px solid white;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  justify-self: center;
+  align-self: center;
+  background-color: #ddd;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  color: #666;
+}
+
+.header-info h1 {
+  color: var(--primary-color);
+  margin-bottom: 10px;
+  font-size: 2.5em;
+  font-weight: 700;
+}
+
+.header-info .title {
+  color: var(--accent-color);
+  font-size: 1.3em;
+  font-weight: 600;
+  margin-bottom: 15px;
+}
+
+.header-info .affiliation {
+  font-size: 1.1em;
+  color: #555;
+  margin-bottom: 10px;
+}
+
+.contact-info {
+  margin-top: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+.contact-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #555;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.contact-item:hover { color: var(--accent-color); }
+
+.navbar {
+  background-color: var(--primary-color);
+  padding: 15px;
+  border-radius: 8px;
+  margin-bottom: 30px;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.navbar ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  margin: 0;
+  padding: 0;
+  flex-wrap: wrap;
+}
+
+.navbar a {
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+  padding: 8px 16px;
+  border-radius: 4px;
+  transition: background-color 0.3s;
+}
+
+.navbar a:hover { background-color: var(--accent-color); }
+
+.section {
+  margin-bottom: 40px;
+  padding: 25px;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+  border-left: 4px solid var(--accent-color);
+}
+
+.section h2 {
+  color: var(--primary-color);
+  border-bottom: 2px solid var(--accent-color);
+  padding-bottom: 10px;
+  margin-bottom: 20px;
+  font-size: 1.8em;
+}
+
+.timeline {
+  position: relative;
+  padding-left: 30px;
+}
+
+.timeline::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: var(--accent-color);
+}
+
+.timeline-item {
+  position: relative;
+  margin-bottom: 25px;
+  padding-left: 20px;
+}
+
+.timeline-item::before {
+  content: "";
+  position: absolute;
+  left: -26px;
+  top: 5px;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: var(--accent-color);
+  border: 2px solid white;
+  box-shadow: 0 0 0 2px var(--accent-color);
+}
+
+.timeline-date {
+  font-weight: 600;
+  color: var(--accent-color);
+  font-size: 0.9em;
+  margin-bottom: 5px;
+}
+
+.timeline-title {
+  font-weight: 700;
+  color: var(--primary-color);
+  margin-bottom: 5px;
+  font-size: 1.1em;
+}
+
+.timeline-org {
+  color: #666;
+  font-style: italic;
+  margin-bottom: 5px;
+}
+
+.publication {
+  margin-bottom: 20px;
+  padding: 15px;
+  background: var(--light-bg);
+  border-radius: 6px;
+  border-left: 3px solid var(--accent-color);
+}
+
+.pub-title {
+  font-weight: 700;
+  color: var(--primary-color);
+  margin-bottom: 8px;
+}
+
+.pub-authors {
+  color: #555;
+  font-size: 0.95em;
+  margin-bottom: 5px;
+}
+
+.pub-journal {
+  font-style: italic;
+  color: #777;
+  font-size: 0.9em;
+}
+
+.pub-link {
+  display: inline-block;
+  margin-top: 8px;
+  color: var(--accent-color);
+  text-decoration: none;
+  font-size: 0.9em;
+}
+
+.pub-link:hover { text-decoration: underline; }
+
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+}
+
+.skill-category {
+  background: var(--light-bg);
+  padding: 20px;
+  border-radius: 8px;
+}
+
+.skill-category h3 {
+  color: var(--primary-color);
+  margin-bottom: 15px;
+  font-size: 1.2em;
+}
+
+.skill-item {
+  margin-bottom: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.skill-level {
+  background: #e0e0e0;
+  height: 8px;
+  border-radius: 4px;
+  width: 100px;
+  overflow: hidden;
+}
+
+.skill-level-fill {
+  height: 100%;
+  background: var(--accent-color);
+  border-radius: 4px;
+}
+
+.grant-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 15px;
+  background: var(--light-bg);
+  margin-bottom: 10px;
+  border-radius: 6px;
+  border-left: 3px solid #27ae60;
+}
+
+.grant-year {
+  font-weight: 700;
+  color: #27ae60;
+  min-width: 100px;
+}
+
+.grant-title {
+  flex: 1;
+  color: var(--primary-color);
+}
+
+.teach-institution {
+  background: var(--light-bg);
+  padding: 20px;
+  margin-bottom: 20px;
+  border-radius: 8px;
+}
+
+.teach-institution h3 {
+  color: var(--primary-color);
+  margin-bottom: 15px;
+  border-bottom: 1px solid var(--border-color);
+  padding-bottom: 8px;
+}
+
+.course-list {
+  list-style: none;
+  padding: 0;
+}
+
+.course-list li {
+  padding: 8px 0;
+  border-bottom: 1px solid #eee;
+  display: flex;
+  justify-content: space-between;
+}
+
+.course-list li:last-child { border-bottom: none; }
+
+.course-code {
+  font-weight: 600;
+  color: var(--accent-color);
+  min-width: 100px;
+}
+
+.footer {
+  text-align: center;
+  padding: 30px;
+  color: #777;
+  border-top: 1px solid var(--border-color);
+  margin-top: 40px;
+}
+
+@media (max-width: 768px) {
+  .header {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+  .profile-img {
+    width: 150px;
+    height: 150px;
+  }
+  .navbar ul {
+    flex-direction: column;
+    gap: 10px;
+  }
+  .contact-info { justify-content: center; }
+}
+
+@media print {
+  .navbar { display: none; }
+  .section {
+    break-inside: avoid;
+    box-shadow: none;
+    border: 1px solid #ddd;
+  }
+}
