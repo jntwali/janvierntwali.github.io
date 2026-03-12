@@ -1,598 +1,699 @@
 <!DOCTYPE html>
-
-<html>
-
+<html lang="en">
 <head>
-
-<meta charset="utf-8" />
-<meta name="generator" content="pandoc" />
-<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
-
-
-
-
-<title>Janvier Ntwali</title>
-
-<script src="index_files/header-attrs-2.30/header-attrs.js"></script>
-<script src="index_files/jquery-3.6.0/jquery-3.6.0.min.js"></script>
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<link href="index_files/bootstrap-3.3.5/css/bootstrap.min.css" rel="stylesheet" />
-<script src="index_files/bootstrap-3.3.5/js/bootstrap.min.js"></script>
-<script src="index_files/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
-<script src="index_files/bootstrap-3.3.5/shim/respond.min.js"></script>
-<style>h1 {font-size: 34px;}
-       h1.title {font-size: 38px;}
-       h2 {font-size: 30px;}
-       h3 {font-size: 24px;}
-       h4 {font-size: 18px;}
-       h5 {font-size: 16px;}
-       h6 {font-size: 12px;}
-       code {color: inherit; background-color: rgba(0, 0, 0, 0.04);}
-       pre:not([class]) { background-color: white }</style>
-<script src="index_files/navigation-1.1/tabsets.js"></script>
-<link href="index_files/highlightjs-9.12.0/default.css" rel="stylesheet" />
-<script src="index_files/highlightjs-9.12.0/highlight.js"></script>
-
-<style type="text/css">
-  code{white-space: pre-wrap;}
-  span.smallcaps{font-variant: small-caps;}
-  span.underline{text-decoration: underline;}
-  div.column{display: inline-block; vertical-align: top; width: 50%;}
-  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
-  ul.task-list{list-style: none;}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Janvier Ntwali - Agricultural Engineering</title>
+    <style>
+        :root {
+            --primary-color: #2c3e50;
+            --accent-color: #3498db;
+            --text-color: #333;
+            --light-bg: #f8f9fa;
+            --border-color: #dee2e6;
+        }
+        
+        * { box-sizing: border-box; }
+        
+        body {
+            font-family: "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #ffffff;
+        }
+        
+        .navbar {
+            background-color: var(--primary-color);
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        
+        .navbar ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin: 0;
+            padding: 0;
+            flex-wrap: wrap;
+        }
+        
+        .navbar a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            padding: 8px 16px;
+            border-radius: 4px;
+            transition: background-color 0.3s;
+        }
+        
+        .navbar a:hover { background-color: var(--accent-color); }
+        
+        .header {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 40px;
+            margin-bottom: 40px;
+            padding: 30px;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        
+        .profile-img {
+            width: 250px;
+            height: 250px;
+            border-radius: 50%;
+            background-color: #ddd;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 14px;
+            color: #666;
+            border: 5px solid white;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+            justify-self: center;
+            align-self: center;
+        }
+        
+        .header-info h1 {
+            color: var(--primary-color);
+            margin-bottom: 10px;
+            font-size: 2.5em;
+            font-weight: 700;
+        }
+        
+        .header-info .title {
+            color: var(--accent-color);
+            font-size: 1.3em;
+            font-weight: 600;
+            margin-bottom: 15px;
+        }
+        
+        .header-info .affiliation {
+            font-size: 1.1em;
+            color: #555;
+            margin-bottom: 10px;
+        }
+        
+        .contact-info {
+            margin-top: 20px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+        
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            color: #555;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .contact-item:hover { color: var(--accent-color); }
+        
+        .section {
+            margin-bottom: 40px;
+            padding: 25px;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+            border-left: 4px solid var(--accent-color);
+        }
+        
+        .section h2 {
+            color: var(--primary-color);
+            border-bottom: 2px solid var(--accent-color);
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+            font-size: 1.8em;
+        }
+        
+        .timeline {
+            position: relative;
+            padding-left: 30px;
+        }
+        
+        .timeline::before {
+            content: "";
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: var(--accent-color);
+        }
+        
+        .timeline-item {
+            position: relative;
+            margin-bottom: 25px;
+            padding-left: 20px;
+        }
+        
+        .timeline-item::before {
+            content: "";
+            position: absolute;
+            left: -26px;
+            top: 5px;
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: var(--accent-color);
+            border: 2px solid white;
+            box-shadow: 0 0 0 2px var(--accent-color);
+        }
+        
+        .timeline-date {
+            font-weight: 600;
+            color: var(--accent-color);
+            font-size: 0.9em;
+            margin-bottom: 5px;
+        }
+        
+        .timeline-title {
+            font-weight: 700;
+            color: var(--primary-color);
+            margin-bottom: 5px;
+            font-size: 1.1em;
+        }
+        
+        .timeline-org {
+            color: #666;
+            font-style: italic;
+            margin-bottom: 5px;
+        }
+        
+        .publication {
+            margin-bottom: 20px;
+            padding: 15px;
+            background: var(--light-bg);
+            border-radius: 6px;
+            border-left: 3px solid var(--accent-color);
+        }
+        
+        .pub-title {
+            font-weight: 700;
+            color: var(--primary-color);
+            margin-bottom: 8px;
+        }
+        
+        .pub-authors {
+            color: #555;
+            font-size: 0.95em;
+            margin-bottom: 5px;
+        }
+        
+        .pub-journal {
+            font-style: italic;
+            color: #777;
+            font-size: 0.9em;
+        }
+        
+        .pub-link {
+            display: inline-block;
+            margin-top: 8px;
+            color: var(--accent-color);
+            text-decoration: none;
+            font-size: 0.9em;
+        }
+        
+        .pub-link:hover { text-decoration: underline; }
+        
+        .grant-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            padding: 15px;
+            background: var(--light-bg);
+            margin-bottom: 10px;
+            border-radius: 6px;
+            border-left: 3px solid #27ae60;
+        }
+        
+        .grant-year {
+            font-weight: 700;
+            color: #27ae60;
+            min-width: 100px;
+        }
+        
+        .grant-title {
+            flex: 1;
+            color: var(--primary-color);
+        }
+        
+        .teach-institution {
+            background: var(--light-bg);
+            padding: 20px;
+            margin-bottom: 20px;
+            border-radius: 8px;
+        }
+        
+        .teach-institution h3 {
+            color: var(--primary-color);
+            margin-bottom: 15px;
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 8px;
+        }
+        
+        .course-list {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .course-list li {
+            padding: 8px 0;
+            border-bottom: 1px solid #eee;
+            display: flex;
+            justify-content: space-between;
+        }
+        
+        .course-list li:last-child { border-bottom: none; }
+        
+        .course-code {
+            font-weight: 600;
+            color: var(--accent-color);
+            min-width: 100px;
+        }
+        
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+        
+        .skill-category {
+            background: var(--light-bg);
+            padding: 20px;
+            border-radius: 8px;
+        }
+        
+        .skill-category h3 {
+            color: var(--primary-color);
+            margin-bottom: 15px;
+            font-size: 1.2em;
+        }
+        
+        .skill-item {
+            margin-bottom: 10px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .skill-level {
+            background: #e0e0e0;
+            height: 8px;
+            border-radius: 4px;
+            width: 100px;
+            overflow: hidden;
+        }
+        
+        .skill-level-fill {
+            height: 100%;
+            background: var(--accent-color);
+            border-radius: 4px;
+        }
+        
+        .footer {
+            text-align: center;
+            padding: 30px;
+            color: #777;
+            border-top: 1px solid var(--border-color);
+            margin-top: 40px;
+        }
+        
+        @media (max-width: 768px) {
+            .header {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+            .profile-img {
+                width: 150px;
+                height: 150px;
+            }
+            .navbar ul {
+                flex-direction: column;
+                gap: 10px;
+            }
+            .contact-info { justify-content: center; }
+        }
     </style>
-
-<style type="text/css">code{white-space: pre;}</style>
-<script type="text/javascript">
-if (window.hljs) {
-  hljs.configure({languages: []});
-  hljs.initHighlightingOnLoad();
-  if (document.readyState && document.readyState === "complete") {
-    window.setTimeout(function() { hljs.initHighlighting(); }, 0);
-  }
-}
-</script>
-
-
-
-
-
-
-<link rel="stylesheet" href="css/style.css" type="text/css" />
-
-
-
-<style type = "text/css">
-.main-container {
-  max-width: 940px;
-  margin-left: auto;
-  margin-right: auto;
-}
-img {
-  max-width:100%;
-}
-.tabbed-pane {
-  padding-top: 12px;
-}
-.html-widget {
-  margin-bottom: 20px;
-}
-button.code-folding-btn:focus {
-  outline: none;
-}
-summary {
-  display: list-item;
-}
-details > summary > p:only-child {
-  display: inline;
-}
-pre code {
-  padding: 0;
-}
-</style>
-
-
-
-<!-- tabsets -->
-
-<style type="text/css">
-.tabset-dropdown > .nav-tabs {
-  display: inline-table;
-  max-height: 500px;
-  min-height: 44px;
-  overflow-y: auto;
-  border: 1px solid #ddd;
-  border-radius: 4px;
-}
-
-.tabset-dropdown > .nav-tabs > li.active:before, .tabset-dropdown > .nav-tabs.nav-tabs-open:before {
-  content: "\e259";
-  font-family: 'Glyphicons Halflings';
-  display: inline-block;
-  padding: 10px;
-  border-right: 1px solid #ddd;
-}
-
-.tabset-dropdown > .nav-tabs.nav-tabs-open > li.active:before {
-  content: "\e258";
-  font-family: 'Glyphicons Halflings';
-  border: none;
-}
-
-.tabset-dropdown > .nav-tabs > li.active {
-  display: block;
-}
-
-.tabset-dropdown > .nav-tabs > li > a,
-.tabset-dropdown > .nav-tabs > li > a:focus,
-.tabset-dropdown > .nav-tabs > li > a:hover {
-  border: none;
-  display: inline-block;
-  border-radius: 4px;
-  background-color: transparent;
-}
-
-.tabset-dropdown > .nav-tabs.nav-tabs-open > li {
-  display: block;
-  float: none;
-}
-
-.tabset-dropdown > .nav-tabs > li {
-  display: none;
-}
-</style>
-
-<!-- code folding -->
-
-
-
-
 </head>
-
 <body>
 
+<nav class="navbar">
+    <ul>
+        <li><a href="#about">About</a></li>
+        <li><a href="#education">Education</a></li>
+        <li><a href="#experience">Experience</a></li>
+        <li><a href="#research">Research</a></li>
+        <li><a href="#publications">Publications</a></li>
+        <li><a href="#teaching">Teaching</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#contact">Contact</a></li>
+    </ul>
+</nav>
 
-<div class="container-fluid main-container">
+<header class="header" id="about">
+    <div class="profile-img">Photo</div>
+    <div class="header-info">
+        <h1>Janvier Ntwali</h1>
+        <div class="title">Doctoral Student in Agricultural Engineering</div>
+        <div class="affiliation">
+            University of Hohenheim, Stuttgart, Germany<br>
+            Lecturer, Biotechnology | INES Ruhengeri, Rwanda
+        </div>
+        <div class="contact-info">
+            <a href="mailto:janvier.ntwali@uni-hohenheim.de" class="contact-item">
+                <span>&#9993;</span> janvier.ntwali@uni-hohenheim.de
+            </a>
+            <a href="https://orcid.org/0000-0001-5110-844X" target="_blank" class="contact-item">
+                <span>&#128100;</span> ORCID
+            </a>
+        </div>
+    </div>
+</header>
 
+<section class="section" id="education">
+    <h2>Education & Trainings</h2>
+    <div class="timeline">
+        <div class="timeline-item">
+            <div class="timeline-date">2017 – Present</div>
+            <div class="timeline-title">Doctoral Studies, Agriculture Engineering in the Tropics and Subtropics</div>
+            <div class="timeline-org">University of Hohenheim, Stuttgart, Germany</div>
+        </div>
+        <div class="timeline-item">
+            <div class="timeline-date">May – Sept 2017</div>
+            <div class="timeline-title">German Language Course</div>
+            <div class="timeline-org">Goethe Institute, Kigali/Göttingen</div>
+        </div>
+        <div class="timeline-item">
+            <div class="timeline-date">Oct – Dec 2015</div>
+            <div class="timeline-title">Borlaug Fellowship Training Program</div>
+            <div class="timeline-org">University of Nebraska Lincoln, USA - Methods of analysis of moulds and mycotoxins</div>
+        </div>
+        <div class="timeline-item">
+            <div class="timeline-date">Mar – Jun 2013</div>
+            <div class="timeline-title">Tailor Made Training</div>
+            <div class="timeline-org">Vrian Projects B.V., University of Wageningen, Nordwin College, Netherlands - Postharvest technologies and Food Processing</div>
+        </div>
+        <div class="timeline-item">
+            <div class="timeline-date">2009 – 2012</div>
+            <div class="timeline-title">Master of Engineering, Fermentation Engineering</div>
+            <div class="timeline-org">South China University of Science and Technology, Guangzhou, China</div>
+        </div>
+        <div class="timeline-item">
+            <div class="timeline-date">2008 – 2009</div>
+            <div class="timeline-title">Chinese Language Course</div>
+            <div class="timeline-org">South China University of Technology, Guangzhou, China</div>
+        </div>
+        <div class="timeline-item">
+            <div class="timeline-date">2003 – 2007</div>
+            <div class="timeline-title">Bachelor of Science in Food Science and Technology</div>
+            <div class="timeline-org">Kigali Institute of Science and Technology, Kigali, Rwanda</div>
+        </div>
+    </div>
+</section>
 
+<section class="section" id="experience">
+    <h2>Employment & Professional Experience</h2>
+    <div class="timeline">
+        <div class="timeline-item">
+            <div class="timeline-date">2012 – Present</div>
+            <div class="timeline-title">Lecturer in Biotechnology</div>
+            <div class="timeline-org">Institut d'Enseignement Supérieur de Ruhengeri (INES Ruhengeri), Rwanda</div>
+        </div>
+        <div class="timeline-item">
+            <div class="timeline-date">Jun – Sept 2016</div>
+            <div class="timeline-title">Consultant (Short Term)</div>
+            <div class="timeline-org">GAIN Rwanda - Product development and quality assurance service provider</div>
+        </div>
+        <div class="timeline-item">
+            <div class="timeline-date">2014 – 2016</div>
+            <div class="timeline-title">Researcher</div>
+            <div class="timeline-org">GVTC - Baseline Survey of the Hydrological Systems in the Greater Virunga Landscape around the Volcano National Park</div>
+        </div>
+        <div class="timeline-item">
+            <div class="timeline-date">2015 – 2016</div>
+            <div class="timeline-title">National Long-term Expert (Training of Trainers)</div>
+            <div class="timeline-org">GFA Consulting Group (Fixed-term)</div>
+        </div>
+    </div>
+</section>
 
+<section class="section" id="research">
+    <h2>Research Projects</h2>
+    <div class="timeline">
+        <div class="timeline-item">
+            <div class="timeline-date">2024 – 2025</div>
+            <div class="timeline-title">Strengthening farmer cooperatives in Rwanda through participatory development of PV-powered postharvest processing of maize</div>
+            <div class="timeline-org">Seeding the Future Foundation</div>
+        </div>
+        <div class="timeline-item">
+            <div class="timeline-date">2022 – 2023</div>
+            <div class="timeline-title">Design, construction and testing of a solar-biomass hybrid flatbed dryer for maize cobs in Rwanda</div>
+            <div class="timeline-org">Seeding the Future Foundation</div>
+        </div>
+        <div class="timeline-item">
+            <div class="timeline-date">2020 – 2025</div>
+            <div class="timeline-title">Des Bioénergies pour les PME d'Afrique de l'Ouest (BIOSTAR)</div>
+            <div class="timeline-org">EU, AFD</div>
+        </div>
+        <div class="timeline-item">
+            <div class="timeline-date">2018 – 2019</div>
+            <div class="timeline-title">Assessment of mycotoxins contamination and the causing factors along the Maize value chain in the production regions of Rwanda</div>
+            <div class="timeline-org">Fiat Panis Foundation</div>
+        </div>
+        <div class="timeline-item">
+            <div class="timeline-date">2012 – 2015</div>
+            <div class="timeline-title">The Spirit Project: Strengthening the capacities for fostering innovation along potato value chains in East Africa</div>
+            <div class="timeline-org">ACP-EU (Partner)</div>
+        </div>
+    </div>
+</section>
 
-<div id="header">
+<section class="section" id="publications">
+    <h2>Refereed Publications</h2>
+    
+    <div class="publication">
+        <div class="pub-title">Assessment of mycotoxin contamination in Rwanda: A comparison of agro-ecological zones</div>
+        <div class="pub-authors">Ntwali, J.; Latif, S.; Müller, J.</div>
+        <div class="pub-journal">Food Control, 160, 110309 (2024)</div>
+        <a href="https://doi.org/10.1016/j.foodcont.2024.110309" class="pub-link" target="_blank">DOI: 10.1016/j.foodcont.2024.110309</a>
+    </div>
+    
+    <div class="publication">
+        <div class="pub-title">Performance evaluation of an inflatable solar dryer for maize and the effect on product quality compared with direct sun drying</div>
+        <div class="pub-authors">Ntwali, J.; Schock, S.; Romuli, S.; et al.</div>
+        <div class="pub-journal">Applied Sciences, 11(15) (2021)</div>
+        <a href="https://doi.org/10.3390/app11157074" class="pub-link" target="_blank">DOI: 10.3390/app11157074</a>
+    </div>
+    
+    <div class="publication">
+        <div class="pub-title">Geranyl Butyrate Production by Candida antarctica Lipase B-Displaying Pichia pastoris</div>
+        <div class="pub-authors">Jin, Z., Ntwali, J., Lin, Y., Kui, H., Zheng, S., Han, S.</div>
+        <div class="pub-journal">Advances in Applied Biotechnology. Lecture Notes in Electrical Engineering, vol 332. Springer (2015)</div>
+        <a href="https://doi.org/10.1007/978-3-662-45657-6_39" class="pub-link" target="_blank">DOI: 10.1007/978-3-662-45657-6_39</a>
+    </div>
+    
+    <div class="publication">
+        <div class="pub-title">Improving Blended Carrot-Orange Juice Quality by the Addition of Cyclodextrins During Enzymatic Clarification</div>
+        <div class="pub-authors">Karangwa, E., Hayat, K., Rao, L., et al.</div>
+        <div class="pub-journal">Food and Bioprocess Technology, 5, 2612–2617 (2012)</div>
+        <a href="https://doi.org/10.1007/s11947-011-0557-z" class="pub-link" target="_blank">DOI: 10.1007/s11947-011-0557-z</a>
+    </div>
+    
+    <div class="publication">
+        <div class="pub-title">Production of flavor esters catalyzed by CALB-displaying Pichia pastoris whole-cells in a batch reactor</div>
+        <div class="pub-authors">Jin, Z.; Ntwali J.; Shuang-Yan H.; Sui-Ping Z.; Ying L.</div>
+        <div class="pub-journal">Journal of Biotechnology (2012)</div>
+    </div>
+</section>
 
+<section class="section" id="grants">
+    <h2>Research Grants & Awards</h2>
+    
+    <div class="grant-item">
+        <div class="grant-year">2022 – 2025</div>
+        <div class="grant-title">Seeding the Future van Lengerich Foundation Academia and Research Grant to design and develop a solar-biomass hybrid drying of maize cobs in Rwanda</div>
+    </div>
+    
+    <div class="grant-item">
+        <div class="grant-year">2018 & 2023</div>
+        <div class="grant-title">Dr. Hermann Eiselen Doktorandenförderung, Stiftung fiat panis</div>
+    </div>
+    
+    <div class="grant-item">
+        <div class="grant-year">2015</div>
+        <div class="grant-title">International Impact Awards of the Institute of Agriculture and Natural Resources, University of Nebraska-Lincoln</div>
+    </div>
+    
+    <div class="grant-item">
+        <div class="grant-year">2015</div>
+        <div class="grant-title">Subsidisation of research partnership by the Lake Kivu Monitoring Program</div>
+    </div>
+    
+    <div class="grant-item">
+        <div class="grant-year">2014</div>
+        <div class="grant-title">A Survey of Hydrological Systems in the Great Virunga Landscape 2014-2015, GVTC</div>
+    </div>
+</section>
 
+<section class="section" id="teaching">
+    <h2>Teaching Experience</h2>
+    
+    <div class="teach-institution">
+        <h3>University of Hohenheim</h3>
+        <ul class="course-list">
+            <li>
+                <span><span class="course-code">4403-541</span> Research Front Mapping: Detection of mycotoxins contamination in maize grains</span>
+                <span>Winter 2021</span>
+            </li>
+            <li>
+                <span><span class="course-code">4403-550</span> Postharvest Technology of Food and Biobased Products: Postharvest losses and mycotoxins</span>
+                <span>Summer 2022</span>
+            </li>
+        </ul>
+    </div>
+    
+    <div class="teach-institution">
+        <h3>INES Ruhengeri</h3>
+        <ul class="course-list">
+            <li><span><span class="course-code">FEN 214</span> Food Engineering and Unit Operations I and II</span></li>
+            <li><span><span class="course-code">PHT 425</span> Postharvest Technology, Perishable Products and Non-Perishable Products Handling</span></li>
+            <li><span><span class="course-code">FWM 524</span> Food Quality Management, Hygiene and Sanitation</span></li>
+            <li><span><span class="course-code">FWM 524</span> Food Product Development</span></li>
+            <li><span><span class="course-code">PAN 513</span> Physical and Chemical of Food Analysis</span></li>
+            <li><span><span class="course-code">PAN 513</span> Special Methods of Analysis</span></li>
+        </ul>
+    </div>
+</section>
 
-<h1 class="title toc-ignore">Janvier Ntwali</h1>
+<section class="section" id="conferences">
+    <h2>Conference Posters & Presentations</h2>
+    <div class="timeline">
+        <div class="timeline-item">
+            <div class="timeline-date">2023</div>
+            <div class="timeline-title">Technical evaluation of a solar-biomass flatbed dryer for maize cobs drying in Rwanda</div>
+            <div class="timeline-org">Tropentag (Poster)</div>
+        </div>
+        <div class="timeline-item">
+            <div class="timeline-date">2022</div>
+            <div class="timeline-title">Design, construction and testing of a solar-biomass flatbed dryer for maize cobs drying in Rwanda</div>
+            <div class="timeline-org">Tropentag (Poster)</div>
+        </div>
+        <div class="timeline-item">
+            <div class="timeline-date">2022</div>
+            <div class="timeline-title">Improvement of the Drying Performance of Pre-cooked Beans (Phaseolus vulgaris) through Ultrasonic-Assisted Hulling</div>
+            <div class="timeline-org">Tropentag (Poster)</div>
+        </div>
+        <div class="timeline-item">
+            <div class="timeline-date">2022</div>
+            <div class="timeline-title">Bewertung eines modularen Trockners für die nachhaltige Produktion von Arzneipflanzen</div>
+            <div class="timeline-org">Bernburger Winterseminar Arznei- und Gewürzpflanzen (Conference Paper)</div>
+        </div>
+        <div class="timeline-item">
+            <div class="timeline-date">2021</div>
+            <div class="timeline-title">Investigation of Air Flow Resistance for Maize Cobs Bulk Using an Automatic Test Ring</div>
+            <div class="timeline-org">Tropentag (Poster)</div>
+        </div>
+        <div class="timeline-item">
+            <div class="timeline-date">2018</div>
+            <div class="timeline-title">Performance evaluation of an inflatable solar dryer for maize and the effect on product quality compared with direct sun drying</div>
+            <div class="timeline-org">Tropentag (Poster)</div>
+        </div>
+    </div>
+</section>
 
-</div>
+<section class="section" id="professional">
+    <h2>Professional Duties & Service</h2>
+    <ul class="course-list">
+        <li>Reviewer for <strong>Journal of Food Control</strong></li>
+        <li>Reviewer for <strong>Journal of Stored Products Research</strong></li>
+        <li>2012 – 2016: Member of Technical Committee on beverages, Rwanda Standards Board</li>
+        <li>2014 – Present: Member of Forest of Hope (Local NGO for conservation of Gishwati Rain Forest)</li>
+    </ul>
+</section>
 
+<section class="section" id="skills">
+    <h2>Skills & Proficiencies</h2>
+    
+    <div class="skills-grid">
+        <div class="skill-category">
+            <h3>Languages</h3>
+            <div class="skill-item">
+                <span>Kinyarwanda</span>
+                <div class="skill-level"><div class="skill-level-fill" style="width: 100%"></div></div>
+            </div>
+            <div class="skill-item">
+                <span>English</span>
+                <div class="skill-level"><div class="skill-level-fill" style="width: 90%"></div></div>
+            </div>
+            <div class="skill-item">
+                <span>French</span>
+                <div class="skill-level"><div class="skill-level-fill" style="width: 90%"></div></div>
+            </div>
+            <div class="skill-item">
+                <span>German</span>
+                <div class="skill-level"><div class="skill-level-fill" style="width: 70%"></div></div>
+            </div>
+        </div>
+        
+        <div class="skill-category">
+            <h3>Digital Proficiency</h3>
+            <ul style="list-style: none; padding: 0;">
+                <li style="padding: 5px 0;">&#10004; MS Office (Word, Excel, PowerPoint)</li>
+                <li style="padding: 5px 0;">&#10004; Statistical Software: SAS, R Programming</li>
+                <li style="padding: 5px 0;">&#10004; Basic Programming: C</li>
+                <li style="padding: 5px 0;">&#10004; CAD: SolidWorks® (Basic)</li>
+            </ul>
+        </div>
+    </div>
+    
+    <div style="margin-top: 20px; padding: 15px; background: var(--light-bg); border-radius: 8px;">
+        <strong>Driving Licence:</strong> German driving licence B1
+    </div>
+</section>
 
-<!-- Navigation -->
-<div class="navbar">
-<ul>
-<li>
-<a href="#about">About</a>
-</li>
-<li>
-<a href="#education">Education</a>
-</li>
-<li>
-<a href="#experience">Experience</a>
-</li>
-<li>
-<a href="#research">Research</a>
-</li>
-<li>
-<a href="#publications">Publications</a>
-</li>
-<li>
-<a href="#teaching">Teaching</a>
-</li>
-<li>
-<a href="#skills">Skills</a>
-</li>
-<li>
-<a href="#contact">Contact</a>
-</li>
-</ul>
-</div>
-<!-- Header/About Section -->
-<div id="about" class="header">
-<div class="profile-img">
-<pre><code>&lt;span&gt;Photo&lt;/span&gt;</code></pre>
-</div>
-<div class="header-info">
-<pre><code>&lt;h1&gt;Janvier Ntwali&lt;/h1&gt;
-&lt;div class=&quot;title&quot;&gt;Doctoral Student in Agricultural Engineering&lt;/div&gt;
-&lt;div class=&quot;affiliation&quot;&gt;
-  University of Hohenheim, Stuttgart, Germany&lt;br&gt;
-  Lecturer, Biotechnology | INES Ruhengeri, Rwanda
-&lt;/div&gt;
-&lt;div class=&quot;contact-info&quot;&gt;
-  &lt;a href=&quot;mailto:janvier.ntwali@uni-hohenheim.de&quot; class=&quot;contact-item&quot;&gt;
-    &lt;span&gt;&amp;#9993;&lt;/span&gt; janvier.ntwali@uni-hohenheim.de
-  &lt;/a&gt;
-  &lt;a href=&quot;https://orcid.org/0000-0001-5110-844X&quot; target=&quot;_blank&quot; class=&quot;contact-item&quot;&gt;
-    &lt;span&gt;&amp;#128100;&lt;/span&gt; ORCID
-  &lt;/a&gt;
-&lt;/div&gt;</code></pre>
-</div>
-</div>
-<!-- Education Section -->
-<div id="education" class="section">
-<h2>
-Education &amp; Trainings
-</h2>
-<div class="timeline">
-<pre><code>&lt;div class=&quot;timeline-item&quot;&gt;
-  &lt;div class=&quot;timeline-date&quot;&gt;2017 – Present&lt;/div&gt;
-  &lt;div class=&quot;timeline-title&quot;&gt;Doctoral Studies, Agriculture Engineering in the Tropics and Subtropics&lt;/div&gt;
-  &lt;div class=&quot;timeline-org&quot;&gt;University of Hohenheim, Stuttgart, Germany&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class=&quot;timeline-item&quot;&gt;
-  &lt;div class=&quot;timeline-date&quot;&gt;May – Sept 2017&lt;/div&gt;
-  &lt;div class=&quot;timeline-title&quot;&gt;German Language Course&lt;/div&gt;
-  &lt;div class=&quot;timeline-org&quot;&gt;Goethe Institute, Kigali/Göttingen&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class=&quot;timeline-item&quot;&gt;
-  &lt;div class=&quot;timeline-date&quot;&gt;Oct – Dec 2015&lt;/div&gt;
-  &lt;div class=&quot;timeline-title&quot;&gt;Borlaug Fellowship Training Program&lt;/div&gt;
-  &lt;div class=&quot;timeline-org&quot;&gt;University of Nebraska Lincoln, USA&lt;br&gt;Methods of analysis of moulds and mycotoxins&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class=&quot;timeline-item&quot;&gt;
-  &lt;div class=&quot;timeline-date&quot;&gt;Mar – Jun 2013&lt;/div&gt;
-  &lt;div class=&quot;timeline-title&quot;&gt;Tailor Made Training&lt;/div&gt;
-  &lt;div class=&quot;timeline-org&quot;&gt;Vrian Projects B.V., University of Wageningen, Nordwin College, Netherlands&lt;br&gt;Postharvest technologies and Food Processing&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class=&quot;timeline-item&quot;&gt;
-  &lt;div class=&quot;timeline-date&quot;&gt;2009 – 2012&lt;/div&gt;
-  &lt;div class=&quot;timeline-title&quot;&gt;Master of Engineering, Fermentation Engineering&lt;/div&gt;
-  &lt;div class=&quot;timeline-org&quot;&gt;South China University of Science and Technology, Guangzhou, China&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class=&quot;timeline-item&quot;&gt;
-  &lt;div class=&quot;timeline-date&quot;&gt;2008 – 2009&lt;/div&gt;
-  &lt;div class=&quot;timeline-title&quot;&gt;Chinese Language Course&lt;/div&gt;
-  &lt;div class=&quot;timeline-org&quot;&gt;South China University of Technology, Guangzhou, China&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class=&quot;timeline-item&quot;&gt;
-  &lt;div class=&quot;timeline-date&quot;&gt;2003 – 2007&lt;/div&gt;
-  &lt;div class=&quot;timeline-title&quot;&gt;Bachelor of Science in Food Science and Technology&lt;/div&gt;
-  &lt;div class=&quot;timeline-org&quot;&gt;Kigali Institute of Science and Technology, Kigali, Rwanda&lt;/div&gt;
-&lt;/div&gt;</code></pre>
-</div>
-</div>
-<!-- Employment Section -->
-<div id="experience" class="section">
-<h2>
-Employment &amp; Professional Experience
-</h2>
-<div class="timeline">
-<pre><code>&lt;div class=&quot;timeline-item&quot;&gt;
-  &lt;div class=&quot;timeline-date&quot;&gt;2012 – Present&lt;/div&gt;
-  &lt;div class=&quot;timeline-title&quot;&gt;Lecturer in Biotechnology&lt;/div&gt;
-  &lt;div class=&quot;timeline-org&quot;&gt;Institut d&#39;Enseignement Supérieur de Ruhengeri (INES Ruhengeri), Rwanda&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class=&quot;timeline-item&quot;&gt;
-  &lt;div class=&quot;timeline-date&quot;&gt;Jun – Sept 2016&lt;/div&gt;
-  &lt;div class=&quot;timeline-title&quot;&gt;Consultant (Short Term)&lt;/div&gt;
-  &lt;div class=&quot;timeline-org&quot;&gt;GAIN Rwanda&lt;br&gt;Product development and quality assurance service provider&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class=&quot;timeline-item&quot;&gt;
-  &lt;div class=&quot;timeline-date&quot;&gt;2014 – 2016&lt;/div&gt;
-  &lt;div class=&quot;timeline-title&quot;&gt;Researcher&lt;/div&gt;
-  &lt;div class=&quot;timeline-org&quot;&gt;GVTC&lt;br&gt;Baseline Survey of the Hydrological Systems in the Greater Virunga Landscape around the Volcano National Park&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class=&quot;timeline-item&quot;&gt;
-  &lt;div class=&quot;timeline-date&quot;&gt;2015 – 2016&lt;/div&gt;
-  &lt;div class=&quot;timeline-title&quot;&gt;National Long-term Expert (Training of Trainers)&lt;/div&gt;
-  &lt;div class=&quot;timeline-org&quot;&gt;GFA Consulting Group (Fixed-term)&lt;/div&gt;
-&lt;/div&gt;</code></pre>
-</div>
-</div>
-<!-- Research Projects Section -->
-<div id="research" class="section">
-<h2>
-Research Projects
-</h2>
-<div class="timeline">
-<pre><code>&lt;div class=&quot;timeline-item&quot;&gt;
-  &lt;div class=&quot;timeline-date&quot;&gt;2024 – 2025&lt;/div&gt;
-  &lt;div class=&quot;timeline-title&quot;&gt;Strengthening farmer cooperatives in Rwanda through participatory development of PV-powered postharvest processing of maize&lt;/div&gt;
-  &lt;div class=&quot;timeline-org&quot;&gt;Seeding the Future Foundation&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class=&quot;timeline-item&quot;&gt;
-  &lt;div class=&quot;timeline-date&quot;&gt;2022 – 2023&lt;/div&gt;
-  &lt;div class=&quot;timeline-title&quot;&gt;Design, construction and testing of a solar-biomass hybrid flatbed dryer for maize cobs in Rwanda&lt;/div&gt;
-  &lt;div class=&quot;timeline-org&quot;&gt;Seeding the Future Foundation&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class=&quot;timeline-item&quot;&gt;
-  &lt;div class=&quot;timeline-date&quot;&gt;2020 – 2025&lt;/div&gt;
-  &lt;div class=&quot;timeline-title&quot;&gt;Des Bioénergies pour les PME d&#39;Afrique de l&#39;Ouest (BIOSTAR)&lt;/div&gt;
-  &lt;div class=&quot;timeline-org&quot;&gt;EU, AFD&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class=&quot;timeline-item&quot;&gt;
-  &lt;div class=&quot;timeline-date&quot;&gt;2018 – 2019&lt;/div&gt;
-  &lt;div class=&quot;timeline-title&quot;&gt;Assessment of mycotoxins contamination and the causing factors along the Maize value chain in the production regions of Rwanda&lt;/div&gt;
-  &lt;div class=&quot;timeline-org&quot;&gt;Fiat Panis Foundation&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class=&quot;timeline-item&quot;&gt;
-  &lt;div class=&quot;timeline-date&quot;&gt;2012 – 2015&lt;/div&gt;
-  &lt;div class=&quot;timeline-title&quot;&gt;The Spirit Project: Strengthening the capacities for fostering innovation along potato value chains in East Africa&lt;/div&gt;
-  &lt;div class=&quot;timeline-org&quot;&gt;ACP-EU (Partner)&lt;/div&gt;
-&lt;/div&gt;</code></pre>
-</div>
-</div>
-<!-- Publications Section -->
-<div id="publications" class="section">
-<h2>
-Refereed Publications
-</h2>
-<div class="publication">
-<pre><code>&lt;div class=&quot;pub-title&quot;&gt;Assessment of mycotoxin contamination in Rwanda: A comparison of agro-ecological zones&lt;/div&gt;
-&lt;div class=&quot;pub-authors&quot;&gt;Ntwali, J.; Latif, S.; Müller, J.&lt;/div&gt;
-&lt;div class=&quot;pub-journal&quot;&gt;Food Control, 160, 110309 (2024)&lt;/div&gt;
-&lt;a href=&quot;https://doi.org/10.1016/j.foodcont.2024.110309&quot; class=&quot;pub-link&quot; target=&quot;_blank&quot;&gt;DOI: 10.1016/j.foodcont.2024.110309&lt;/a&gt;</code></pre>
-</div>
-<div class="publication">
-<pre><code>&lt;div class=&quot;pub-title&quot;&gt;Performance evaluation of an inflatable solar dryer for maize and the effect on product quality compared with direct sun drying&lt;/div&gt;
-&lt;div class=&quot;pub-authors&quot;&gt;Ntwali, J.; Schock, S.; Romuli, S.; et al.&lt;/div&gt;
-&lt;div class=&quot;pub-journal&quot;&gt;Applied Sciences, 11(15) (2021)&lt;/div&gt;
-&lt;a href=&quot;https://doi.org/10.3390/app11157074&quot; class=&quot;pub-link&quot; target=&quot;_blank&quot;&gt;DOI: 10.3390/app11157074&lt;/a&gt;</code></pre>
-</div>
-<div class="publication">
-<pre><code>&lt;div class=&quot;pub-title&quot;&gt;Geranyl Butyrate Production by Candida antarctica Lipase B-Displaying Pichia pastoris&lt;/div&gt;
-&lt;div class=&quot;pub-authors&quot;&gt;Jin, Z., Ntwali, J., Lin, Y., Kui, H., Zheng, S., Han, S.&lt;/div&gt;
-&lt;div class=&quot;pub-journal&quot;&gt;Advances in Applied Biotechnology. Lecture Notes in Electrical Engineering, vol 332. Springer (2015)&lt;/div&gt;
-&lt;a href=&quot;https://doi.org/10.1007/978-3-662-45657-6_39&quot; class=&quot;pub-link&quot; target=&quot;_blank&quot;&gt;DOI: 10.1007/978-3-662-45657-6_39&lt;/a&gt;</code></pre>
-</div>
-<div class="publication">
-<pre><code>&lt;div class=&quot;pub-title&quot;&gt;Improving Blended Carrot-Orange Juice Quality by the Addition of Cyclodextrins During Enzymatic Clarification&lt;/div&gt;
-&lt;div class=&quot;pub-authors&quot;&gt;Karangwa, E., Hayat, K., Rao, L., et al.&lt;/div&gt;
-&lt;div class=&quot;pub-journal&quot;&gt;Food and Bioprocess Technology, 5, 2612–2617 (2012)&lt;/div&gt;
-&lt;a href=&quot;https://doi.org/10.1007/s11947-011-0557-z&quot; class=&quot;pub-link&quot; target=&quot;_blank&quot;&gt;DOI: 10.1007/s11947-011-0557-z&lt;/a&gt;</code></pre>
-</div>
-<div class="publication">
-<pre><code>&lt;div class=&quot;pub-title&quot;&gt;Production of flavor esters catalyzed by CALB-displaying Pichia pastoris whole-cells in a batch reactor&lt;/div&gt;
-&lt;div class=&quot;pub-authors&quot;&gt;Jin, Z.; Ntwali J.; Shuang-Yan H.; Sui-Ping Z.; Ying L.&lt;/div&gt;
-&lt;div class=&quot;pub-journal&quot;&gt;Journal of Biotechnology (2012)&lt;/div&gt;</code></pre>
-</div>
-</div>
-<!-- Research Grants Section -->
-<div id="grants" class="section">
-<h2>
-Research Grants &amp; Awards
-</h2>
-<div class="grant-item">
-<pre><code>&lt;div class=&quot;grant-year&quot;&gt;2022 – 2025&lt;/div&gt;
-&lt;div class=&quot;grant-title&quot;&gt;Seeding the Future van Lengerich Foundation Academia and Research Grant to design and develop a solar-biomass hybrid drying of maize cobs in Rwanda&lt;/div&gt;</code></pre>
-</div>
-<div class="grant-item">
-<pre><code>&lt;div class=&quot;grant-year&quot;&gt;2018 &amp; 2023&lt;/div&gt;
-&lt;div class=&quot;grant-title&quot;&gt;Dr. Hermann Eiselen Doktorandenförderung, Stiftung fiat panis&lt;/div&gt;</code></pre>
-</div>
-<div class="grant-item">
-<pre><code>&lt;div class=&quot;grant-year&quot;&gt;2015&lt;/div&gt;
-&lt;div class=&quot;grant-title&quot;&gt;International Impact Awards of the Institute of Agriculture and Natural Resources, University of Nebraska-Lincoln&lt;/div&gt;</code></pre>
-</div>
-<div class="grant-item">
-<pre><code>&lt;div class=&quot;grant-year&quot;&gt;2015&lt;/div&gt;
-&lt;div class=&quot;grant-title&quot;&gt;Subsidisation of research partnership by the Lake Kivu Monitoring Program&lt;/div&gt;</code></pre>
-</div>
-<div class="grant-item">
-<pre><code>&lt;div class=&quot;grant-year&quot;&gt;2014&lt;/div&gt;
-&lt;div class=&quot;grant-title&quot;&gt;A Survey of Hydrological Systems in the Great Virunga Landscape 2014-2015, GVTC&lt;/div&gt;</code></pre>
-</div>
-</div>
-<!-- Teaching Section -->
-<div id="teaching" class="section">
-<h2>
-Teaching Experience
-</h2>
-<div class="teach-institution">
-<pre><code>&lt;h3&gt;University of Hohenheim&lt;/h3&gt;
-&lt;ul class=&quot;course-list&quot;&gt;
-  &lt;li&gt;
-    &lt;span&gt;&lt;span class=&quot;course-code&quot;&gt;4403-541&lt;/span&gt; Research Front Mapping: Detection of mycotoxins contamination in maize grains&lt;/span&gt;
-    &lt;span&gt;Winter 2021&lt;/span&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;span&gt;&lt;span class=&quot;course-code&quot;&gt;4403-550&lt;/span&gt; Postharvest Technology of Food and Biobased Products: Postharvest losses and mycotoxins&lt;/span&gt;
-    &lt;span&gt;Summer 2022&lt;/span&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;</code></pre>
-</div>
-<div class="teach-institution">
-<pre><code>&lt;h3&gt;INES Ruhengeri&lt;/h3&gt;
-&lt;ul class=&quot;course-list&quot;&gt;
-  &lt;li&gt;&lt;span&gt;&lt;span class=&quot;course-code&quot;&gt;FEN 214&lt;/span&gt; Food Engineering and Unit Operations I and II&lt;/span&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;span&gt;&lt;span class=&quot;course-code&quot;&gt;PHT 425&lt;/span&gt; Postharvest Technology, Perishable Products and Non-Perishable Products Handling&lt;/span&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;span&gt;&lt;span class=&quot;course-code&quot;&gt;FWM 524&lt;/span&gt; Food Quality Management, Hygiene and Sanitation&lt;/span&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;span&gt;&lt;span class=&quot;course-code&quot;&gt;FWM 524&lt;/span&gt; Food Product Development&lt;/span&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;span&gt;&lt;span class=&quot;course-code&quot;&gt;PAN 513&lt;/span&gt; Physical and Chemical of Food Analysis&lt;/span&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;span&gt;&lt;span class=&quot;course-code&quot;&gt;PAN 513&lt;/span&gt; Special Methods of Analysis&lt;/span&gt;&lt;/li&gt;
-&lt;/ul&gt;</code></pre>
-</div>
-</div>
-<!-- Conference Presentations -->
-<div id="conferences" class="section">
-<h2>
-Conference Posters &amp; Presentations
-</h2>
-<div class="timeline">
-<pre><code>&lt;div class=&quot;timeline-item&quot;&gt;
-  &lt;div class=&quot;timeline-date&quot;&gt;2023&lt;/div&gt;
-  &lt;div class=&quot;timeline-title&quot;&gt;Technical evaluation of a solar-biomass flatbed dryer for maize cobs drying in Rwanda&lt;/div&gt;
-  &lt;div class=&quot;timeline-org&quot;&gt;Tropentag (Poster)&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class=&quot;timeline-item&quot;&gt;
-  &lt;div class=&quot;timeline-date&quot;&gt;2022&lt;/div&gt;
-  &lt;div class=&quot;timeline-title&quot;&gt;Design, construction and testing of a solar-biomass flatbed dryer for maize cobs drying in Rwanda&lt;/div&gt;
-  &lt;div class=&quot;timeline-org&quot;&gt;Tropentag (Poster)&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class=&quot;timeline-item&quot;&gt;
-  &lt;div class=&quot;timeline-date&quot;&gt;2022&lt;/div&gt;
-  &lt;div class=&quot;timeline-title&quot;&gt;Improvement of the Drying Performance of Pre-cooked Beans (Phaseolus vulgaris) through Ultrasonic-Assisted Hulling&lt;/div&gt;
-  &lt;div class=&quot;timeline-org&quot;&gt;Tropentag (Poster)&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class=&quot;timeline-item&quot;&gt;
-  &lt;div class=&quot;timeline-date&quot;&gt;2022&lt;/div&gt;
-  &lt;div class=&quot;timeline-title&quot;&gt;Bewertung eines modularen Trockners für die nachhaltige Produktion von Arzneipflanzen&lt;/div&gt;
-  &lt;div class=&quot;timeline-org&quot;&gt;Bernburger Winterseminar Arznei- und Gewürzpflanzen (Conference Paper)&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class=&quot;timeline-item&quot;&gt;
-  &lt;div class=&quot;timeline-date&quot;&gt;2021&lt;/div&gt;
-  &lt;div class=&quot;timeline-title&quot;&gt;Investigation of Air Flow Resistance for Maize Cobs Bulk Using an Automatic Test Ring&lt;/div&gt;
-  &lt;div class=&quot;timeline-org&quot;&gt;Tropentag (Poster)&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class=&quot;timeline-item&quot;&gt;
-  &lt;div class=&quot;timeline-date&quot;&gt;2018&lt;/div&gt;
-  &lt;div class=&quot;timeline-title&quot;&gt;Performance evaluation of an inflatable solar dryer for maize and the effect on product quality compared with direct sun drying&lt;/div&gt;
-  &lt;div class=&quot;timeline-org&quot;&gt;Tropentag (Poster)&lt;/div&gt;
-&lt;/div&gt;</code></pre>
-</div>
-</div>
-<!-- Professional Duties -->
-<div id="professional" class="section">
-<h2>
-Professional Duties &amp; Service
-</h2>
-<ul class="course-list">
-<li>
-Reviewer for <strong>Journal of Food Control</strong>
-</li>
-<li>
-Reviewer for <strong>Journal of Stored Products Research</strong>
-</li>
-<li>
-2012 – 2016: Member of Technical Committee on beverages, Rwanda
-Standards Board
-</li>
-<li>
-2014 – Present: Member of Forest of Hope (Local NGO for conservation of
-Gishwati Rain Forest)
-</li>
-</ul>
-</div>
-<!-- Skills Section -->
-<div id="skills" class="section">
-<h2>
-Skills &amp; Proficiencies
-</h2>
-<div class="skills-grid">
-<pre><code>&lt;div class=&quot;skill-category&quot;&gt;
-  &lt;h3&gt;Languages&lt;/h3&gt;
-  &lt;div class=&quot;skill-item&quot;&gt;
-    &lt;span&gt;Kinyarwanda&lt;/span&gt;
-    &lt;div class=&quot;skill-level&quot;&gt;&lt;div class=&quot;skill-level-fill&quot; style=&quot;width: 100%&quot;&gt;&lt;/div&gt;&lt;/div&gt;
-  &lt;/div&gt;
-  &lt;div class=&quot;skill-item&quot;&gt;
-    &lt;span&gt;English&lt;/span&gt;
-    &lt;div class=&quot;skill-level&quot;&gt;&lt;div class=&quot;skill-level-fill&quot; style=&quot;width: 90%&quot;&gt;&lt;/div&gt;&lt;/div&gt;
-  &lt;/div&gt;
-  &lt;div class=&quot;skill-item&quot;&gt;
-    &lt;span&gt;French&lt;/span&gt;
-    &lt;div class=&quot;skill-level&quot;&gt;&lt;div class=&quot;skill-level-fill&quot; style=&quot;width: 90%&quot;&gt;&lt;/div&gt;&lt;/div&gt;
-  &lt;/div&gt;
-  &lt;div class=&quot;skill-item&quot;&gt;
-    &lt;span&gt;German&lt;/span&gt;
-    &lt;div class=&quot;skill-level&quot;&gt;&lt;div class=&quot;skill-level-fill&quot; style=&quot;width: 70%&quot;&gt;&lt;/div&gt;&lt;/div&gt;
-  &lt;/div&gt;
-&lt;/div&gt;
+<section class="section" id="contact">
+    <h2>Contact</h2>
+    <div style="text-align: center; padding: 30px;">
+        <p style="font-size: 1.2em; margin-bottom: 20px;">
+            <strong>Janvier Ntwali</strong><br>
+            Doctoral Student & Lecturer
+        </p>
+        <p>
+            University of Hohenheim<br>
+            Institute of Agricultural Engineering<br>
+            Stuttgart, Germany
+        </p>
+        <p style="margin-top: 20px;">
+            <a href="mailto:janvier.ntwali@uni-hohenheim.de" style="color: var(--accent-color); text-decoration: none; font-size: 1.1em;">
+                janvier.ntwali@uni-hohenheim.de
+            </a>
+        </p>
+        <p style="margin-top: 10px;">
+            <a href="https://orcid.org/0000-0001-5110-844X" target="_blank" style="color: var(--accent-color); text-decoration: none;">
+                ORCID: 0000-0001-5110-844X
+            </a>
+        </p>
+    </div>
+</section>
 
-&lt;div class=&quot;skill-category&quot;&gt;
-  &lt;h3&gt;Digital Proficiency&lt;/h3&gt;
-  &lt;ul style=&quot;list-style: none; padding: 0;&quot;&gt;
-    &lt;li style=&quot;padding: 5px 0;&quot;&gt;&amp;#10004; MS Office (Word, Excel, PowerPoint)&lt;/li&gt;
-    &lt;li style=&quot;padding: 5px 0;&quot;&gt;&amp;#10004; Statistical Software: SAS, R Programming&lt;/li&gt;
-    &lt;li style=&quot;padding: 5px 0;&quot;&gt;&amp;#10004; Basic Programming: C&lt;/li&gt;
-    &lt;li style=&quot;padding: 5px 0;&quot;&gt;&amp;#10004; CAD: SolidWorks® (Basic)&lt;/li&gt;
-  &lt;/ul&gt;
-&lt;/div&gt;</code></pre>
-</div>
-<div
-style="margin-top: 20px; padding: 15px; background: var(--light-bg); border-radius: 8px;">
-<pre><code>&lt;strong&gt;Driving Licence:&lt;/strong&gt; German driving licence B1</code></pre>
-</div>
-</div>
-<!-- Contact Section -->
-<div id="contact" class="section">
-<h2>
-Contact
-</h2>
-<div style="text-align: center; padding: 30px;">
-<pre><code>&lt;p style=&quot;font-size: 1.2em; margin-bottom: 20px;&quot;&gt;
-  &lt;strong&gt;Janvier Ntwali&lt;/strong&gt;&lt;br&gt;
-  Doctoral Student &amp; Lecturer
-&lt;/p&gt;
-&lt;p&gt;
-  University of Hohenheim&lt;br&gt;
-  Institute of Agricultural Engineering&lt;br&gt;
-  Stuttgart, Germany
-&lt;/p&gt;
-&lt;p style=&quot;margin-top: 20px;&quot;&gt;
-  &lt;a href=&quot;mailto:janvier.ntwali@uni-hohenheim.de&quot; style=&quot;color: var(--accent-color); text-decoration: none; font-size: 1.1em;&quot;&gt;
-    janvier.ntwali@uni-hohenheim.de
-  &lt;/a&gt;
-&lt;/p&gt;
-&lt;p style=&quot;margin-top: 10px;&quot;&gt;
-  &lt;a href=&quot;https://orcid.org/0000-0001-5110-844X&quot; target=&quot;_blank&quot; style=&quot;color: var(--accent-color); text-decoration: none;&quot;&gt;
-    ORCID: 0000-0001-5110-844X
-  &lt;/a&gt;
-&lt;/p&gt;</code></pre>
-</div>
-</div>
-<div class="footer">
-<p>
-© 2024 Janvier Ntwali | Last updated: March 2024
-</p>
-<p>
-Created with R Markdown
-</p>
-</div>
-
-
-
-
-</div>
-
-<script>
-
-// add bootstrap table styles to pandoc tables
-function bootstrapStylePandocTables() {
-  $('tr.odd').parent('tbody').parent('table').addClass('table table-condensed');
-}
-$(document).ready(function () {
-  bootstrapStylePandocTables();
-});
-
-
-</script>
-
-<!-- tabsets -->
-
-<script>
-$(document).ready(function () {
-  window.buildTabsets("TOC");
-});
-
-$(document).ready(function () {
-  $('.tabset-dropdown > .nav-tabs > li').click(function () {
-    $(this).parent().toggleClass('nav-tabs-open');
-  });
-});
-</script>
-
-<!-- code folding -->
-
-
-<!-- dynamically load mathjax for compatibility with self-contained -->
-<script>
-  (function () {
-    var script = document.createElement("script");
-    script.type = "text/javascript";
-    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
-    document.getElementsByTagName("head")[0].appendChild(script);
-  })();
-</script>
+<footer class="footer">
+    <p>&copy; 2024 Janvier Ntwali | Last updated: March 2024</p>
+    <p>Created with R Markdown</p>
+</footer>
 
 </body>
 </html>
